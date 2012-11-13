@@ -10,6 +10,7 @@ for i = 1:size(y2, 1)
     subtargets = targets(i, :);
     nets(i)    = feedforwardnet(10); 
     nets(i)    = configure(nets(i), inputs, subtargets);
+    nets(i)    = train(nets(i), inputs, subtargets);
 end
 
 end
