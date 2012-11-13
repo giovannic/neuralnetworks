@@ -4,14 +4,9 @@ function [ nets ] = create_six_single( x, y )
 
 
 % Will be turned into a length 6 vector contraining 6 networks 
-nets        = [];           %initalise networks
-num_inputs  = size(x, 1);   %45 muscles going in
-num_outputs = 1;            %single network 1 output 
 
 
-for i = 1:6
-    
-end
+
 
 
 end
