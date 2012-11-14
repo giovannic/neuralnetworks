@@ -1,4 +1,4 @@
-function [ ret ] = CONFUSION_MATRIX(predictions, targets)
+function [ ret ] = confusion_matrix(predictions, targets)
     ret = zeros(6);
     ret = confusionmat(predictions,targets);
 end

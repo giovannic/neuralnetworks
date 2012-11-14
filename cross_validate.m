@@ -16,21 +16,12 @@ for i = 1:num_folds
     [r3, r4] = removerows(targets, 'ind', [start_test_data:stop_test_data]);   
     
     %Raw data
-    [sub_training_examples, sub_training_targets]  = ANNdata(r1, r3);
-    
+    [sub_training_examples, sub_training_targets]  = ANNdata(r1, r3); 
     [sub_testing_examples, sub_testing_targets] = ANNdata(removerows(examples, 'ind', r2.keep_ind),removerows(targets, 'ind', r4.keep_ind));
                                                           
-    
-    
     %Converted format data
-    
-    
-    
     topology    = train(topology, sub_training_examples, sub_training_targets);
     predictions = [predictions; convert_preds(sim(topology, sub_testing_examples))];
-    
-    
-    
     
     start_test_data = start_test_data + fold_size;
     stop_test_data  = stop_test_data + fold_size;
