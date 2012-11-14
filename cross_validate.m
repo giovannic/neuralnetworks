@@ -1,6 +1,5 @@
-function [ average_error ] = cross_validate(examples, targets, topology)
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+function [ predictions ] = cross_validate(examples, targets, topology)
+predictions     = [];
 
 num_folds       = 10;
 fold_size       = floor(length(examples) / num_folds);
@@ -19,13 +18,14 @@ for i = 1:num_folds
     sub_training_targets   = r3;   
     
     sub_testing_examples = removerows(examples, 'ind', r2.keep_ind);
-    sub_testing_targets = removerows(targets, 'ind', r4.keep_ind);
+    sub_testing_targets  = removerows(targets, 'ind', r4.keep_ind);
     
-    
+    topology    = train(topology, sub_training_examples, sub_training_targets);
+    predictions = [predictions, sim(topology, sub_testing_examples)];
     
     
     start_test_data = start_test_data + fold_size;
-    stop_test_data = stop_test_data + fold_size;
+    stop_test_data  = stop_test_data + fold_size;
     
     %Adds any remainder on to the end could greatly effect it in the data
     %set is smaller

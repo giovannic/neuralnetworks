@@ -1,4 +1,4 @@
-function [ average_error ] = cross_validate(examples, targets, )
+function [ average_error ] = cross_validate(examples, targets, topology)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 
