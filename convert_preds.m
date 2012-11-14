@@ -1,10 +1,15 @@
-function [ binary_predictions ] = to_binary_preds( predictions )
+function [ new_predictions ] = convert_preds( predictions )
 %SHIT and needs to be changed
 
-binary_predictions = [];
+temp               = [];
+new_predictions    = [];
 
 for i = 1:length(predictions)
-   binary_predictions(:, i) = convert_sub(predictions(:, i)); 
+   temp(:, i) = convert_sub(predictions(:, i)); 
+end
+
+for i = 1:length(predictions)
+ new_predictions(i, 1) = max(temp(:, i));
 end
 
 end
@@ -13,7 +18,7 @@ function [new_col] = convert_sub(col)
     max_dis = max(col);
     for i = 1:length(col)
        if  col(i) == max_dis
-          col(i) = 1;
+          col(i) = i;
        else
           col(i) = 0; 
        end
