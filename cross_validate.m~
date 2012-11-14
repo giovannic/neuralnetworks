@@ -1,4 +1,5 @@
 function [ predictions ] = cross_validate(examples, targets, topology)
+disp('--------------Cross Validate-----------------');
 predictions     = [];
 
 num_folds       = 10;
@@ -14,17 +15,23 @@ for i = 1:num_folds
     [r1, r2] = removerows(examples, 'ind', [start_test_data:stop_test_data]);
     [r3, r4] = removerows(targets, 'ind', [start_test_data:stop_test_data]);   
     
+    %Raw data
     sub_training_examples  = r1;
     sub_training_targets   = r3;   
     
     sub_testing_examples = removerows(examples, 'ind', r2.keep_ind);
     sub_testing_targets  = removerows(targets, 'ind', r4.keep_ind);
     
+    %Converted format data
+    
+  http://www.youtube.com/watch?v=Us-TVg40ExM
+    
+    
     topology    = train(topology, sub_training_examples, sub_training_targets);
     predictions = [predictions, sim(topology, sub_testing_examples)];
     
-    
-    %put them get predictions
+    topology   = train(topology, sub_training_examples, sub_training_targets);
+    pedictions = [predictions, sim(topology, sub_testing_examples)];
     
     start_test_data = start_test_data + fold_size;
     stop_test_data  = stop_test_data + fold_size;
@@ -35,5 +42,6 @@ for i = 1:num_folds
         stop_test_data = stop_test_data + remainder;
     end
 end
+disp('------------------------------------------------');
 end
 
