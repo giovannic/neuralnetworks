@@ -1,5 +1,5 @@
 function [ ret ] = f1( predictions, targets )
-    cm = CONFUSION_MATRIX(predictions, targets);
+    cm = confusion_matrix(predictions, targets);
 
     %recall rates, precision rates & f1
     recall_rates = zeros(6,1);
