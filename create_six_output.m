@@ -1,4 +1,4 @@
-function [ net ] = create_six_output( inputs, targets, num_layers, num_neurons, training_fn, transfer_fn )
+function [ net ] = create_six_output( inputs, targets, num_layers, num_neurons)
     
 %from lectures: 'networks with many hidden layers are prone to overfitting'
 %               'for more problems one hidden layer should be enough'
