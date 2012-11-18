@@ -8,6 +8,9 @@ function [ ret ] = f1( predictions, targets )
     for emotion = 1:6,
         recall_rates(emotion) = cm(emotion,emotion) / sum(cm(emotion,:)) * 100;
         precision_rates(emotion) = cm(emotion,emotion) / sum(cm(:,emotion)) * 100;
-        ret(emotion) = 2 * precision_rates(emotion) * recall_rates(emotion) / (precision_rates(emotion) + recall_rates(emotion));
+        f1 = 2 * precision_rates(emotion) * recall_rates(emotion) / (precision_rates(emotion) + recall_rates(emotion));
+        if ~isnan(f1)
+            ret(emotion) = f1;
+        end
     end
 end
