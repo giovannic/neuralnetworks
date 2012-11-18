@@ -1,4 +1,4 @@
-function [ predictions ] = cross_validate(examples, targets, topology)
+function [ predictions ] = cross_validate(examples, targets, net)
 disp('--------------Cross Validate-----------------');
 predictions     = [];
 
@@ -20,8 +20,9 @@ for i = 1:num_folds
     [sub_testing_examples, sub_testing_targets] = ANNdata(removerows(examples, 'ind', r2.keep_ind),removerows(targets, 'ind', r4.keep_ind));
                                                           
     %Converted format data
-    topology    = train(topology, sub_training_examples, sub_training_targets);
-    predictions = [predictions; convert_preds(sim(topology, sub_testing_examples))];
+    
+    net    = train(net, sub_training_examples, sub_training_targets);
+    predictions = [predictions; NNout2labels(sim(net, sub_testing_examples))];
     
     start_test_data = start_test_data + fold_size;
     stop_test_data  = stop_test_data + fold_size;
