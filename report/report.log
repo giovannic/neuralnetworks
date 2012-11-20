@@ -1,17 +1,12 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.3)  15 NOV 2012 23:56
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.28)  19 NOV 2012 11:21
 entering extended mode
  %&-line parsing enabled.
 **report.tex
 (./report.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, farsi, arabic, croatian, bulgarian, ukrainian, russian, czech, slov
-ak, danish, dutch, finnish, french, basque, ngerman, german, german-x-2009-06-1
-9, ngerman-x-2009-06-19, ibycus, monogreek, greek, ancientgreek, hungarian, san
-skrit, italian, latin, latvian, lithuanian, mongolian2a, mongolian, bokmal, nyn
-orsk, romanian, irish, coptic, serbian, turkish, welsh, esperanto, uppersorbian
-, estonian, indonesian, interlingua, icelandic, kurmanji, slovenian, polish, po
-rtuguese, spanish, galician, catalan, swedish, ukenglish, pinyin, loaded.
+yphenation, ngerman, german, german-x-2009-06-19, ngerman-x-2009-06-19, ukengli
+sh, loaded.
 (/usr/share/texmf-texlive/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texmf-texlive/tex/latex/base/size11.clo
@@ -29,9 +24,7 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texmf-texlive/tex/latex/ntgclass/a4.sty
-Package: a4 2004/04/15 v1.2g A4 based page layout
-)
+(/vol/lab/tex/inputs/a4.sty)
 (/usr/share/texmf-texlive/tex/latex/preprint/fullpage.sty
 Package: fullpage 1999/02/23 1.1 (PWD)
 \FP@margin=\skip43
@@ -211,22 +204,22 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 2662 strings out of 493848
- 31244 string characters out of 1152823
- 89767 words of memory out of 3000000
- 5922 multiletter control sequences out of 15000+50000
+ 2656 strings out of 495000
+ 31087 string characters out of 1180493
+ 88634 words of memory out of 3000000
+ 5838 multiletter control sequences out of 15000+50000
  12445 words of font info for 38 fonts, out of 3000000 for 9000
- 714 hyphenation exceptions out of 8191
+ 36 hyphenation exceptions out of 8191
  27i,6n,30p,1073b,197s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/shar
-e/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf/fonts/type1/
-public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx
-1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share
-/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/p
-ublic/cm-super/sfrm1728.pfb>
-Output written on report.pdf (1 page, 98712 bytes).
+ </homes/j
+w4610/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </homes/jw4610/.te
+xmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </homes/jw4610/.texmf-var/f
+onts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </homes/jw4610/.texmf-var/fonts/pk/l
+jfour/jknappen/ec/ecrm1200.600pk> </homes/jw4610/.texmf-var/fonts/pk/ljfour/jkn
+appen/ec/ecrm1728.600pk>
+Output written on report.pdf (1 page, 56277 bytes).
 PDF statistics:
- 27 PDF objects out of 1000 (max. 8388607)
+ 178 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

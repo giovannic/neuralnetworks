@@ -53,7 +53,13 @@
 
 \subsection{Discuss how you obtained the optimal topology and optimal values of network parameters. Describe the performance measure you used (and explain why you preferred it over other measures) and the different topologies / parameters you experimented with}
 
+We performed a brute force search over single and double layer topologies between 1 and 30 \times 30 for the default parameters to get an idea of the general performance of topologies, diagram...
+
+-genetic algorithm - population size/generations/crossover/network representation. 
+
 \subsection{Explain what strategy you employed to ensure good generalisation ability of the networks and overcome the problem of overfitting}
+
+We optimised our networks based on the f1 measure for predictions of unseen target values, this would mean that overfitted networks should perform worse and be discarded by our genetic algorithm. To make our genetic algorithm faster we discarded networks which were likely to overfit the data by bounding some of the parameters. We made sure the number of neurons per level to above 5, so it could understand the data sufficiently, and below 30 so that it is not overfitted. We also restricted the number of epochs to 100 so that the network does not become too familiar to the data. 
 
 \subsection{In Part VIII you used the optimal parameters that you found in part VI to train your networks. However, there is a problem with this approach, the data you used for validation at some point will be used for testing in cross-validation. Can you explain why this a problem? Ideally how should you optimise the parameters in cross-validation?}
 
@@ -61,7 +67,11 @@ We were given a number of examples and targets we then divided these into  2/3 t
 
 \subsection{Is there any difference in the classification performance of the two different classification approaches. Discuss the advantages / disadvantages of using 6 single-outut NNs vs. 1 six-output NNs}
 
+Six single output neural networks perform much better than a single network. 
 
+The six networks have the advantage of collectively forming a larger, more complicated and understanding, network without overfitting individually. The isolation between the networks allows for parallelism and for greater parameter specialisation for different emotions. One disadvantage is that having multiple networks may introduce merging conflicts when resolving an answer. This could be solved by limiting outputs to continuous output so that results are very unlikely to match or by ranking networks based on reliability, for example f1 measure, classification rate, most general/simple (i.e. fewer neurons), which also adds to the processing.
+
+The single network however forms a smaller network which is less memory intensive and quicker to train and run. This means more aggressive optimisations can be performed resulting in parameters which are more finely tuned. This network would be more suited for machines whrecomputing resources are limited.
 
 \section{Code Flow Chart}
 
