@@ -53,6 +53,44 @@
 
 \subsection{Discuss how you obtained the optimal topology and optimal values of network parameters. Describe the performance measure you used (and explain why you preferred it over other measures) and the different topologies / parameters you experimented with}
 
+%FIKSEN first part (optimal topology/values)
+We experimented with the following parameters
+\begin{enumerate}
+  \item Number of hidden layers
+  \item Number of hidden neurons in each layer
+  \item Transfer function
+  \item Training Function Parameters
+\end{enumerate}
+
+We decided to make the search space for 1. between 1 - 2 we were able to limit the search space like this through research. For instance in the lecture notes for neural networks it says "Networks with many hidden layers are prone to overfitting and harder to train, for most problems one hidden layer should be enough, 2 hidden layers can sometimes lead to improvement". Through some
+rudeametary testing we established that as we had quite a large problem 2 layers did usually perform better although it took
+quite a lot longer so we decided that was the maximum we could fesibaly have. Thus we decided the search space was 1 - 2.
+
+We decided to make the search space for 2. between 5 - 30 layer 1, 0 - 17 layer 2. Layer 2 was dictated mainly through time
+constraints we found that if layer 1 was large enough any size of layer 2 much greater than 17 would take far too long to train.
+The constraints from layer 1 were chosen through a mixture of expirence and research. We found that any number of neurons in layer
+1 below 5 gave a horribly low classificatiobn rate we we set the lower bounday as 5. We then did some research and found a few 'rules of thumb' two given by Jeff Heaton author of Introduction to Neural Networks In Java were "the optimal size of the hidden layer is usually between the size of the input and size of the output layers" "A good number of neurons is likely to be around the average of the inputs and outputs" we tried out some networks and noticed past 30 training time simply far surpassed any improvement and therefore we decided to make this the ceiling.
+
+We limited out speach space to the following transfer functions:
+\begin{enumerate}
+  \item trainbfg
+  \item traincgb
+  \item traincgf
+  \item traincgp
+  \item traingda
+  \item traingdm
+  \item traingdx
+  \item trainlm
+  \item trainoss
+  \item trainrp
+  \item trainscg 
+\end{enumerate}
+
+These were selected from a list of around 20 gathered from the Matlab NNToolbox documentation. We then removed the training functions which weren't suitable for batch training and we were left with 13. We then read futher into the documentation and decided to not use 'trainb', 'traingd' and 'traigdm' the reason being "The previous section presented two backpropagation training algorithms:gradient descent, and gradient descent with momentum. These two methodsare often too slow for practical problems. In this section we discuss several high performance algorithms that can converge from ten to one hundred times faster than the algorithms discussed previously.".
+
+
+
+
 \subsection{Explain what strategy you employed to ensure good generalisation ability of the networks and overcome the problem of overfitting}
 
 \subsection{In Part VIII you used the optimal parameters that you found in part VI to train your networks. However, there is a problem with this approach, the data you used for validation at some point will be used for testing in cross-validation. Can you explain why this a problem? Ideally how should you optimise the parameters in cross-validation?}
