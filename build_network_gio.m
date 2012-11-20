@@ -1,7 +1,7 @@
 function [ net ] = build_network_gio(train_ex, train_targ, params)
 % params [1,2] = topology, [3,4,5] = transfer fn1,2,3, 6 = training fn, 7 = max epochs, 8 = learning rate, 9 = momentum
     %transfer_functions = {'compet';'hardlim';'hardlims';'logsig';'netinv';'poslin';'purelin';'radbas';'radbasn';'satlin';'satlins';'softmax';'tansig';'tribas'};
-    transfer_functions = {'compet';'hardlim';'hardlims';'logsig';'netinv';'poslin';'purelin';'radbas';'radbasn';'satlin';'satlins';'softmax';'tansig';'tribas'};
+    transfer_functions = {'hardlim';'logsig';'purelin'};
     training_functions = {'trainbfg','traincgb','traincgf','traincgp','traingda','traingdm','traingdx','trainlm','trainoss','trainrp','trainscg'};
     
     dimensions = params(1:2);

@@ -15,9 +15,9 @@ options = gaoptimset(@ga);
 options.FitnessLimit = 3;
 options.PopulationSize = 100;
 options.UseParallel = 'always';
-options.Generations = 100;
+options.Generations = 30;
 
-[x, fval, exitflag, output] = ga(genetic_fitness,9,[],[],[],[],lower_bounds, upper_bounds,[], intc, options);
+[x, fval, exitflag, output] = ga(genetic_fitness,9,[],[],[],[],lower_bounds, upper_bounds,[], intc);
 
 fid = fopen('opt2.out', 'w');
 

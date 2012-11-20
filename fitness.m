@@ -1,6 +1,6 @@
 function [ f ] = fitness(x2, y2, params)
     examples = length(y2);
-    boundary = ceil(0.6 * examples);
+    boundary = ceil(0.66 * examples);
 
     train_examples = x2(:,1:boundary);
     train_targets = y2(:,1:boundary);
