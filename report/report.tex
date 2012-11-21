@@ -13,9 +13,9 @@
 
 
 
-\setlength{\parskip}{0.3cm}
+\setlength{\parskip}{0.3cm}(where appropriate)
 \setlength{\parindent}{0cm}
-\setlength{\textheight}{10in} %used to be 10
+\setlength{\textheight}{10in}
 \setlength{\textwidth}{6.5in}
 \setlength{\parskip}{2pt}
 \addtolength{\oddsidemargin}{-.3in}
@@ -156,21 +156,25 @@ We experimented with the following parameters
   \item Number of hidden layers
   \item Number of hidden neurons in each layer
   \item Transfer function
-  \item Training Function (and function parameters)
+  \item Training function
+  \item Learning rate \emph{(where appropriate)}
+  \item Momentum \emph{(where appropriate)}
 \end{enumerate}
 
-We decided to make the search space for 1. between 1 - 2 we were able to limit the search space like this through research. For instance in the lecture notes for neural networks it says "Networks with many hidden layers are prone to overfitting and harder to train, for most problems one hidden layer should be enough, 2 hidden layers can sometimes lead to improvement". Through some
-rudeametary testing we established that as we had quite a large problem 2 layers did usually perform better although it took
-quite a lot longer so we decided that was the maximum we could fesibaly have. Thus we decided the search space was 1 - 2.
+We decided to make the search space for (1) between 1 - 2. We took this decision as the lecture notes indicate "Networks with many hidden layers are prone to overfitting and harder to train, for most problems one hidden layer should be enough, 2 hidden layers can sometimes lead to improvement". Further to this, the course textbook claims that few practical applications ever need 3 or more layers.
 
-We decided to make the search space for 2. between 5 - 30 layer 1, 0 - 17 layer 2. Layer 2 was dictated mainly through time
-constraints we found that if layer 1 was large enough any size of layer 2 much greater than 17 would take far too long to train.
-The constraints from layer 1 were chosen through a mixture of expirence and research. We found that any number of neurons in layer
-1 below 5 gave a horribly low classificatiobn rate we we set the lower bounday as 5. We then did some research and found a few 'rules of thumb' two given by Jeff Heaton author of Introduction to Neural Networks In Java were "the optimal size of the hidden layer is usually between the size of the input and size of the output layers" "A good number of neurons is likely to be around the average of the inputs and outputs" we tried out some networks and noticed past 30 training time simply far surpassed any improvement and therefore we decided to make this the ceiling.
+Initially We decided to make the search space for (2) between 1-17 neurons for layer 1, 0 - 30 for layer 2 (0 layer 2 neurons representing only 1 layer in NN). We got these values through researching NNs and found these quotes by Jeff Heaton in \emph{Introduction to Neural Networks In Java} -- "the optimal size of the hidden layer is usually between the size of the input and size of the output layers" and "A good number of neurons is likely to be around the average of the inputs and outputs". We then experimented, varying the layer sizes and observed when the number of neurons > 30, training time simply far surpassed any improvement and therefore we made this the ceiling.
 
-We limited out speach space to the following transfer functions:
+The number of layers and neurons/layer were initially calculated using a brute force method in which we went through every combination of layer 1 and layer 2 neurons in the search space and calculated the average f1 measure for each network (keeping default values for transfer functions etc.). The results of running this brute force test can be seen in the graphs below. This gave us the conclusion that the topology [13,27] was the best with other default parameters, and gave us a seed value for later.
+
+[INSERT graphs here]
+
+Having tested optimal topology using brute force, we decided to use a more elegant solution to get us our final optimal network by using a genetic algorithm.
+
+For this algorithm to run in enough time to complete the project, we noticed we would have to drastically reduce the search space. As such, we decided to remove a large number of in built training functions as they were unnecessary, slow or incompatible with our NN.
+We limited out search space to the following transfer functions:
 \begin{multicols}{2}
-\begin{enumerate}
+\begin{itemize}
   \item trainbfg
   \item traincgb
   \item traincgf
@@ -182,10 +186,20 @@ We limited out speach space to the following transfer functions:
   \item trainoss
   \item trainrp
   \item trainscg 
-\end{enumerate}
+\end{itemize}
 \end{multicols}
 
-These were selected from a list of around 20 gathered from the Matlab NNToolbox documentation. We then removed the training functions which weren't suitable for batch training and we were left with 13. We then read futher into the documentation and decided to not use 'trainb', 'traingd' and 'traigdm' the reason being "The previous section presented two backpropagation training algorithms:gradient descent, and gradient descent with momentum. These two methodsare often too slow for practical problems. In this section we discuss several high performance algorithms that can converge from ten to one hundred times faster than the algorithms discussed previously.".
+These were selected from a list of 20 functions taken from the Matlab NNToolbox documentation. We removed the training functions which weren't suitable for batch training and, after reading further into the documentation, we decided to not use 'trainb', 'traingd' and 'traigdm' - our justification being "The previous section presented two backpropagation training algorithms: gradient descent, and gradient descent with momentum. These two methods are often too slow for practical problems. In this section we discuss several high performance algorithms that can converge from ten to one hundred times faster than the algorithms discussed previously.".
+
+There were a huge amount of parameters to the different transfer functions, so to simplify or searching, we decided to optimise only learning rate and 'mu' (momentum) which were allowed to take values between 0 and 1 as multiples of 0.1.
+
+The transfer functions were also tested in the same manner.
+
+After running the genetic algorithm for a population size of 100 over 100 generations we got 
+what appears to be the optimal parameters.
+
+
+
 
 %FIKSEN talk about the training functions/params
 
@@ -211,5 +225,6 @@ The single network however forms a smaller network which is less memory intensiv
 \includegraphics[width=\linewidth]{crossover.png}
 \includegraphics[width=\linewidth]{genetic_algorithm_diagram.png}
 \includegraphics[width=\linewidth]{select.png}
+
 
 \end{document}
