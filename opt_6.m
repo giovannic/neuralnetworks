@@ -13,9 +13,9 @@ upper_bounds = [30,17,2,2,2,11,100,0.5,0.5];
 intc = [1,2,3,4,5,6,7];
 options = gaoptimset(@ga);
 options.FitnessLimit = 3;
-options.PopulationSize = 100;
+options.PopulationSize = 75;
 options.UseParallel = 'always';
-options.Generations = 100;
+options.Generations = 50;
 
 [x, fval, exitflag, output] = ga(genetic_fitness,9,[],[],[],[],lower_bounds, upper_bounds,[], intc, options);
 
