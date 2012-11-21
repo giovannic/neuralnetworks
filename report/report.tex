@@ -46,20 +46,20 @@
 % how you classified each example based on %the 6 outputs, 
 %anything that you think it is important in your system implementation);
 \section{Questions}
-%1. Discuss how you obtained the optimal topology and optimal values of network parameters. Describe the performance measure you %used (and explain why you preferred it over other measures) and the different topologies / parameters you experimented with.
-%2. Explain what strategy you employed to ensure good generalisation ability of the networks and overcome the problem of %overfitting.
-%3. In Part VIII you used the optimal parameters that you found in part VI to train your networks. However, there is a problem with this approach, the data you used for validation at some point will be used for testing in cross-validation. Can you explain why this a problem? Ideally how should you optimise the parameters in cross-validation?
-%4. Is there any difference in the classification performance of the two different classification approaches. Discuss the advantages / disadvantages of using 6 single-outut NNs vs. 1 six-output NNs.
 
 \subsection{Discuss how you obtained the optimal topology and optimal values of network parameters. Describe the performance measure you used (and explain why you preferred it over other measures) and the different topologies / parameters you experimented with}
+%Question above /\
 
-%FIKSEN first part (optimal topology/values)
+%FIKSEN/GIO/ME first part (optimal topology/values)
+
+%GIO talk about f1 vs other measures please
+
 We experimented with the following parameters
 \begin{enumerate}
   \item Number of hidden layers
   \item Number of hidden neurons in each layer
   \item Transfer function
-  \item Training Function Parameters
+  \item Training Function (and function parameters)
 \end{enumerate}
 
 We decided to make the search space for 1. between 1 - 2 we were able to limit the search space like this through research. For instance in the lecture notes for neural networks it says "Networks with many hidden layers are prone to overfitting and harder to train, for most problems one hidden layer should be enough, 2 hidden layers can sometimes lead to improvement". Through some
@@ -88,7 +88,7 @@ We limited out speach space to the following transfer functions:
 
 These were selected from a list of around 20 gathered from the Matlab NNToolbox documentation. We then removed the training functions which weren't suitable for batch training and we were left with 13. We then read futher into the documentation and decided to not use 'trainb', 'traingd' and 'traigdm' the reason being "The previous section presented two backpropagation training algorithms:gradient descent, and gradient descent with momentum. These two methodsare often too slow for practical problems. In this section we discuss several high performance algorithms that can converge from ten to one hundred times faster than the algorithms discussed previously.".
 
-
+%FIKSEN talk about the training functions/params
 
 \subsection{Explain what strategy you employed to ensure good generalisation ability of the networks and overcome the problem of overfitting}
 
