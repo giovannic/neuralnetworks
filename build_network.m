@@ -21,7 +21,7 @@ function [ net ] = build_network(train_ex, train_targ, transfer_functions, train
     net.trainParam.mu = params(9);
     net.trainParam.time = 60;
     
-%    net.trainParam.showWindow = 0;
+    net.trainParam.showWindow = 0;
     
     net = train(net, train_ex, train_targ);
 end

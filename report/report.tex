@@ -6,6 +6,7 @@
 \usepackage{amssymb,amsmath}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+\usepackage{multicol}
 \restylefloat{table}
 %\usepackage{parskip}
 %\usepackage{setspace}
@@ -14,7 +15,7 @@
 
 \setlength{\parskip}{0.3cm}
 \setlength{\parindent}{0cm}
-\setlength{\textheight}{10.7in} %used to be 10
+\setlength{\textheight}{10in} %used to be 10
 \setlength{\textwidth}{6.5in}
 \setlength{\parskip}{2pt}
 \addtolength{\oddsidemargin}{-.3in}
@@ -39,8 +40,84 @@
 \section{Results}
 % Confuction matrices (for both types of networks)
 % Average classification rate and recall, precision and F1 measures per class (part VIII).
+
+\subsection{Confusion Matricies}
+
+\begin{table}[H]
+\caption{Confusion Six output Network} % title of Table
+\centering % used for centering table
+\begin{tabular}{c c c c c c} % centered columns (4 columns)
+\hline % inserts single horizontal line
+0  & 0   & 0  & 0   & 0  & 0 \\ % inserting body of the table
+0  & 0   & 0  & 0   & 0  & 0 \\
+0  & 0   & 0  & 0   & 0  & 0 \\
+0  & 0   & 0  & 0   & 0  & 0 \\
+0  & 0   & 0  & 0   & 0  & 0 \\ 
+0  & 0   & 0  & 0   & 0  & 0 \\ [1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:sixconf} % is used to refer this table in the text
+\end{table}
+
+\begin{table}[H]
+\caption{Confusion Single Output Networks} % title of Table
+\centering % used for centering table
+\begin{tabular}{c c c c c c} % centered columns (4 columns)
+\hline % inserts single horizontal line
+0  & 0   & 0  & 0   & 0  & 0 \\ % inserting body of the table
+0  & 0   & 0  & 0   & 0  & 0 \\
+0  & 0   & 0  & 0   & 0  & 0 \\
+0  & 0   & 0  & 0   & 0  & 0 \\
+0  & 0   & 0  & 0   & 0  & 0 \\ 
+0  & 0   & 0  & 0   & 0  & 0 \\ [1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:singconf} % is used to refer this table in the text
+\end{table}
+
+\subsection{Average Classification Rate, Recall Precision and F1 Measures}
+
+\begin{table}[H]
+\caption{Six Output Evaluation Results} % title of Table
+\centering % used for centering table
+\begin{tabular}{c c c c c} % centered columns (4 columns)
+\hline\hline %inserts double horizontal lines
+Emotion & name & Precision rate & Recall rate & f1 measure\\ [0.5ex] % inserts table
+\hline % inserts single horizontal line
+1 & anger     & 0 & 0 & 0\\ % inserting body of the table
+2 & disgust   & 0 & 0 & 0\\
+3 & fear      & 0 & 0 & 0\\
+4 & happiness & 0 & 0 & 0\\
+5 & sadness   & 0 & 0 & 0\\ 
+6 & suprise   & 0 & 0 & 0\\ [1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:sixevaluation} % is used to refer this table in the text
+\end{table}
+
+\begin{table}[H]
+\caption{Single Output Evaluation Results} % title of Table
+\centering % used for centering table
+\begin{tabular}{c c c c c} % centered columns (4 columns)
+\hline\hline %inserts double horizontal lines
+Emotion & name & Precision rate & Recall rate & f1 measure\\ [0.5ex] % inserts table
+\hline % inserts single horizontal line
+1 & anger     & 0 & 0 & 0\\ % inserting body of the table
+2 & disgust   & 0 & 0 & 0\\
+3 & fear      & 0 & 0 & 0\\
+4 & happiness & 0 & 0 & 0\\
+5 & sadness   & 0 & 0 & 0\\ 
+6 & suprise   & 0 & 0 & 0\\ [1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:singleevaluation} % is used to refer this table in the text
+\end{table}
+
 \section{Fold Perfomance}
 %Figure of the average performance per fold for both types of networks (part IX)
+
+
+
 \section{Implementation Details}
 % Brief summary of implementation details (e.g., (e.g., how you performed cross-validation,
 % how you classified each example based on %the 6 outputs, 
@@ -72,6 +149,7 @@ The constraints from layer 1 were chosen through a mixture of expirence and rese
 1 below 5 gave a horribly low classificatiobn rate we we set the lower bounday as 5. We then did some research and found a few 'rules of thumb' two given by Jeff Heaton author of Introduction to Neural Networks In Java were "the optimal size of the hidden layer is usually between the size of the input and size of the output layers" "A good number of neurons is likely to be around the average of the inputs and outputs" we tried out some networks and noticed past 30 training time simply far surpassed any improvement and therefore we decided to make this the ceiling.
 
 We limited out speach space to the following transfer functions:
+\begin{multicols}{2}
 \begin{enumerate}
   \item trainbfg
   \item traincgb
@@ -85,6 +163,7 @@ We limited out speach space to the following transfer functions:
   \item trainrp
   \item trainscg 
 \end{enumerate}
+\end{multicols}
 
 These were selected from a list of around 20 gathered from the Matlab NNToolbox documentation. We then removed the training functions which weren't suitable for batch training and we were left with 13. We then read futher into the documentation and decided to not use 'trainb', 'traingd' and 'traigdm' the reason being "The previous section presented two backpropagation training algorithms:gradient descent, and gradient descent with momentum. These two methodsare often too slow for practical problems. In this section we discuss several high performance algorithms that can converge from ten to one hundred times faster than the algorithms discussed previously.".
 
@@ -106,6 +185,11 @@ The six networks have the advantage of collectively forming a larger, more compl
 
 The single network however forms a smaller network which is less memory intensive and quicker to train and run. This means more aggressive optimisations can be performed resulting in parameters which are more finely tuned. This network would be more suited for machines whrecomputing resources are limited.
 
-\section{Code Flow Chart}
+\section{Code Flow Charts}
+
+\includegraphics[width=\linewidth]{build_networks.png}
+\includegraphics[width=\linewidth]{crossover.png}
+\includegraphics[width=\linewidth]{genetic_algorithm_diagram.png}
+\includegraphics[width=\linewidth]{select.png}
 
 \end{document}

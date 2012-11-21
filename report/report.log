@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.10.12)  20 NOV 2012 14:12
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.21)  21 NOV 2012 14:05
 entering extended mode
  %&-line parsing enabled.
 **report.tex
@@ -162,64 +162,97 @@ File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
 \Gin@req@height=\dimen117
 \Gin@req@width=\dimen118
 )
+(/vol/lab/tex/inputs/multicol.sty
+Style option: `multicol' v1.3c <91/04/08> (FMi)
+English documentation          <91/03/14> (FMi)
+\c@unbalance=\count102
+\c@collectmore=\count103
+\c@tracingmulticols=\count104
+\col@number=\count105
+\doublecol@number=\count106
+\multicoltolerance=\count107
+\page@free=\dimen119
+\premulticols=\dimen120
+\postmulticols=\dimen121
+\multicolsep=\skip49
+\multicolbaselineskip=\skip50
+\partial@page=\box32
+)
 \@float@every@table=\toks24
  (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-
-(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+ (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count102
-\scratchdimen=\dimen119
-\scratchbox=\box32
-\nofMPsegments=\count103
-\nofMParguments=\count104
+\scratchcounter=\count108
+\scratchdimen=\dimen122
+\scratchbox=\box33
+\nofMPsegments=\count109
+\nofMParguments=\count110
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count105
-\MPscratchDim=\dimen120
-\MPnumerator=\count106
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen123
+\MPnumerator=\count112
 \everyMPtoPDFconversion=\toks26
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 36.
+LaTeX Font Info:    Try loading font information for U+msa on input line 37.
  (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 36.
+LaTeX Font Info:    Try loading font information for U+msb on input line 37.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./report.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+<build_networks.png, id=16, 1065.9825pt x 1316.92pt>
+File: build_networks.png Graphic file (type png)
+ <use build_networks.png>
+<crossover.png, id=17, 624.3325pt x 637.38126pt>
+File: crossover.png Graphic file (type png)
+ <use crossover.png>
+<genetic_algorithm_diagram.png, id=18, 607.26875pt x 866.23625pt>
+File: genetic_algorithm_diagram.png Graphic file (type png)
+
+<use genetic_algorithm_diagram.png>
+<select.png, id=19, 520.94624pt x 485.815pt>
+File: select.png Graphic file (type png)
+ <use select.png> [4] [5 <./build_networks.png (PNG copy)>] [6 <./crossover.png
+ (PNG copy)>]
+Overfull \vbox (9.24248pt too high) has occurred while \output is active []
+
+
+[7 <./genetic_algorithm_diagram.png (PNG copy)>] [8 <./select.png (PNG copy)>]
+(./report.aux) ) 
 Here is how much of TeX's memory you used:
- 2656 strings out of 495000
- 31087 string characters out of 1180492
- 90634 words of memory out of 3000000
- 5838 multiletter control sequences out of 15000+50000
- 12445 words of font info for 38 fonts, out of 3000000 for 9000
+ 2729 strings out of 495000
+ 32273 string characters out of 1180493
+ 93692 words of memory out of 3000000
+ 5903 multiletter control sequences out of 15000+50000
+ 13693 words of font info for 43 fonts, out of 3000000 for 9000
  36 hyphenation exceptions out of 8191
- 27i,6n,30p,1073b,197s stack positions out of 5000i,500n,10000p,200000b,50000s
- </hom
-es/jw4610/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </homes/jw4610
-/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </homes/jw4610/.texmf-v
-ar/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </homes/jw4610/.texmf-var/fonts/
-pk/ljfour/jknappen/ec/ecrm1200.600pk> </homes/jw4610/.texmf-var/fonts/pk/ljfour
-/jknappen/ec/ecrm1728.600pk>
-Output written on report.pdf (2 pages, 67765 bytes).
+ 27i,7n,30p,1073b,212s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </homes/jw4610/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095
+.600pk> </homes/jw4610/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> <
+/homes/jw4610/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </homes/jw
+4610/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </homes/jw4610/.tex
+mf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk>
+Output written on report.pdf (8 pages, 293905 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
+ 235 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
