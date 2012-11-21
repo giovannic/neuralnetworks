@@ -130,6 +130,26 @@ Emotion & name & Precision rate & Recall rate & f1 measure\\ [0.5ex] % inserts t
 %FIKSEN/GIO/ME first part (optimal topology/values)
 
 %GIO talk about f1 vs other measures please
+The provided y values have the following percentage of the 6 emotions:
+
+\begin{tabular}{c c c} % centered columns (4 columns)
+\hline\hline %inserts double horizontal lines
+Emotion & name & Percentage\\ [0.5ex] % inserts table
+\hline % inserts single horizontal line
+1 & anger     & 13 \\ % inserting body of the table
+2 & disgust   & 19 \\
+3 & fear      & 12 \\
+4 & happiness & 21 \\
+5 & sadness   & 13 \\ 
+6 & suprise   & 20 \\ [1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+
+This means that the provided targets are unbalanced, there is not an equal chance of getting each emotion. Using the classification function as a fitness function would be misleading since it is not weighted for each emotion.
+
+Using the precision rate would weight the false positives against the negative examples of the emotion and the recall rate will weight the true negative against the positive examples. The average of this will give our f1 measure which is more representative of our performance. 
+
+We thought the extra time it would take to calculate the f1 was insignificant incomparison to the training function and would yeild better results in our genetic algorithm by discarding truely bad candidates instead of keeping candidates which were slightly better at evaluating the most common emotion, happiness.
 
 We experimented with the following parameters
 \begin{enumerate}
