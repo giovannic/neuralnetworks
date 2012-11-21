@@ -48,12 +48,12 @@
 \centering % used for centering table
 \begin{tabular}{c c c c c c} % centered columns (4 columns)
 \hline % inserts single horizontal line
-0  & 0   & 0  & 0   & 0  & 0 \\ % inserting body of the table
-0  & 0   & 0  & 0   & 0  & 0 \\
-0  & 0   & 0  & 0   & 0  & 0 \\
-0  & 0   & 0  & 0   & 0  & 0 \\
-0  & 0   & 0  & 0   & 0  & 0 \\ 
-0  & 0   & 0  & 0   & 0  & 0 \\ [1ex] % [1ex] adds vertical space
+90  & 12   & 4   & 1     & 12  & 1   \\ % inserting body of the table
+16  & 169  & 4   & 8     & 24  & 1   \\
+5   & 0    & 93  & 1     & 4   & 7   \\
+3   & 5    & 1   & 201   & 4   & 2   \\
+13  & 12   & 3   & 2     & 86  & 3   \\ 
+4   & 0    & 13  & 2     & 2   & 192 \\ [1ex] % [1ex] adds vertical space
 \hline %inserts single line
 \end{tabular}
 \label{table:sixconf} % is used to refer this table in the text
@@ -64,12 +64,12 @@
 \centering % used for centering table
 \begin{tabular}{c c c c c c} % centered columns (4 columns)
 \hline % inserts single horizontal line
-0  & 0   & 0  & 0   & 0  & 0 \\ % inserting body of the table
-0  & 0   & 0  & 0   & 0  & 0 \\
-0  & 0   & 0  & 0   & 0  & 0 \\
-0  & 0   & 0  & 0   & 0  & 0 \\
-0  & 0   & 0  & 0   & 0  & 0 \\ 
-0  & 0   & 0  & 0   & 0  & 0 \\ [1ex] % [1ex] adds vertical space
+98  & 13   & 4   & 0    & 11  & 1   \\ % inserting body of the table
+14  & 164  & 4   & 9    & 16  & 1   \\
+3   & 1    & 96  & 0    & 4   & 13  \\
+3   & 6    & 1   & 204  & 3   & 3   \\
+12  & 14   & 3   & 1    & 95  & 1   \\ 
+1   & 0    & 10  & 1    & 3   & 187 \\ [1ex] % [1ex] adds vertical space
 \hline %inserts single line
 \end{tabular}
 \label{table:singconf} % is used to refer this table in the text
@@ -84,16 +84,18 @@
 \hline\hline %inserts double horizontal lines
 Emotion & name & Precision rate & Recall rate & f1 measure\\ [0.5ex] % inserts table
 \hline % inserts single horizontal line
-1 & anger     & 0 & 0 & 0\\ % inserting body of the table
-2 & disgust   & 0 & 0 & 0\\
-3 & fear      & 0 & 0 & 0\\
-4 & happiness & 0 & 0 & 0\\
-5 & sadness   & 0 & 0 & 0\\ 
-6 & suprise   & 0 & 0 & 0\\ [1ex] % [1ex] adds vertical space
+1 & anger     & 68.7023 & 75.0000 & 70.7131\\ % inserting body of the table
+2 & disgust   & 85.3535 & 76.1261 & 80.4762\\
+3 & fear      & 78.8136 & 84.5455 & 81.5789\\
+4 & happiness & 93.4884 & 93.0556 & 93.2715\\
+5 & sadness   & 65.1515 & 72.2689 & 68.5259\\ 
+6 & suprise   & 93.2039 & 90.1408 & 91.6468\\ [1ex] % [1ex] adds vertical space
 \hline %inserts single line
 \end{tabular}
 \label{table:sixevaluation} % is used to refer this table in the text
 \end{table}
+
+Classification Rate: 0.8310
 
 \begin{table}[H]
 \caption{Single Output Evaluation Results} % title of Table
@@ -102,20 +104,29 @@ Emotion & name & Precision rate & Recall rate & f1 measure\\ [0.5ex] % inserts t
 \hline\hline %inserts double horizontal lines
 Emotion & name & Precision rate & Recall rate & f1 measure\\ [0.5ex] % inserts table
 \hline % inserts single horizontal line
-1 & anger     & 0 & 0 & 0\\ % inserting body of the table
-2 & disgust   & 0 & 0 & 0\\
-3 & fear      & 0 & 0 & 0\\
-4 & happiness & 0 & 0 & 0\\
-5 & sadness   & 0 & 0 & 0\\ 
-6 & suprise   & 0 & 0 & 0\\ [1ex] % [1ex] adds vertical space
+1 & anger     & 74.8092 & 77.1654 & 75.9690\\ % inserting body of the table
+2 & disgust   & 82.8283 & 78.8462 & 80.7882\\
+3 & fear      & 81.3559 & 82.0513 & 81.7021\\
+4 & happiness & 94.8837 & 92.7273 & 93.7931\\
+5 & sadness   & 71.9697 & 75.3968 & 73.6434\\ 
+6 & suprise   & 90.7767 & 92.5743 & 91.6667\\ [1ex] % [1ex] adds vertical space
 \hline %inserts single line
 \end{tabular}
 \label{table:singleevaluation} % is used to refer this table in the text
 \end{table}
 
+Classification Rate: 0.8440
+
 \section{Fold Perfomance}
 %Figure of the average performance per fold for both types of networks (part IX)
-
+\begin{figure} [H]
+\includegraphics[width=\linewidth]{1by6plot.jpg}
+\caption{"F1 performance for the 6 output network"}
+\end{figure}
+\begin{figure} [H]
+\includegraphics[width=\linewidth]{6by1plot.jpg}
+\caption{"F1 performance for the single output networks"}
+\end{figure}
 
 
 \section{Implementation Details}
