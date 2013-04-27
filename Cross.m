@@ -1,4 +1,4 @@
-%confusion matrix
+%confusion matrix 
 predictions(predictions == 0) = NaN;
 classification_rate = length(predictions(~isnan(predictions))) / length(y) * 100;
 cm = CONFUSION_MATRIX(predictions, y);
